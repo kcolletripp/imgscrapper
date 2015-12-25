@@ -20,7 +20,6 @@ chrome.runtime.onMessage.addListener(
       //this removes the query after the file name, if there is one
       path = path.substring(0, (path.indexOf("?") == -1) ? path.length : path.indexOf("?"));
       path = "img/" + path.substring(path.lastIndexOf('/')+1);
-      console.log(path);
       chrome.downloads.download({ url: request.url, filename: path })
     }
   }
